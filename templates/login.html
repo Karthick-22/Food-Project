@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}" />
+    <link rel="stylesheet" href="{% static 'js/icofont/icofont.min.css' %}">
+    <title>Sign in</title>
+    <link rel="icon" href="{% static 'images/title.png' %}" type="image/icon type">
+  </head>
+  <body>
+     <div class="loader_bg">
+      <div class="loader"><img src="{% static 'images/fruit.gif' %}" alt="#" /></div>
+      <p>please wait....</p>
+    </div> 
+    <div class="container">
+      <div class="forms-container">
+       
+        <div class="signin-signup">
+          
+          <form action="/login_main" method="POST" class="sign-in-form">
+            {% csrf_token %}
+            <h2 class="title" style="padding: 20px;">Sign in</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" name="user_name" required />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" name="password" required />
+            
+            </div>
+            <a href="{% url 'forget' %}" target="_blank" style="text-decoration: none;color: green;">Forget Password?</a>
+            
+            <input type="submit" value="Login" class="btn solid" />
+            <p class="social-text">Or Sign in with social platforms</p>
+            <div class="social-media">
+              <a href="https://www.facebook.com/" target="_blank" class="social-icon">
+                <i class="icofont-facebook"></i>
+              </a>
+              <a href="https://www.twitter.com/" target="_blank" class="social-icon">
+                <i class="icofont-twitter"></i>
+              </a>
+              <a href="https://www.google.com/" target="_blank" class="social-icon">
+                <i class="icofont-google-plus"></i>
+              </a>
+              <a href="https://www.linkedin.com/" target="_blank" class="social-icon">
+                <i class="icofont-linkedin"></i>
+              </a>
+            </div>
+          </form>
+         
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h1 >New <span style="color:black;font-weight: 600;">Here ?</span></h>
+            <p>
+              Haven't account?Create a Account
+            </p>
+           <a href="{% url 'register_first' %}"> <button class="btn transparent" id="sign-up-btn">
+              Sign up
+          
+          </button></a>
+          <a href="{% url 'home' %}"> <button class="btn transparent" id="sign-up-btn">
+            Home
+        
+        </button></a>
+          </div>
+          <img src="{% static 'images/logo.svg' %}" class="image" alt="" />
+        </div>
+       
+      </div>
+    </div>
+   
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+    <script src="{% static 'js/plugin.js' %}"></script>
+    <!-- sidebar -->
+    <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="{% static 'js/scroll.js' %}"></script>
+    <script src="{% static 'js/scroll.min.js' %}"></script>
+</body>
+</html>

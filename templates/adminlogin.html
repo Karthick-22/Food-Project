@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            AdminLogin
+        </title>
+       <link rel="stylesheet" href="{% static 'css/style4.css' %}">
+	   <link rel="stylesheet" href="{% static 'js/icofont/icofont.min.css' %}">
+       
+    </head>
+    <body>
+        
+
+
+		<a href="{% url 'home' %}"><i class="icofont-home icofont-1x">Home</i></a>
+<h2>Admin Login</h2>
+
+<div class="container" id="container">
+	
+	<div class="form-container sign-up-container">
+		
+		
+		<form action="/adminlogin_page" method="POST">
+			{% csrf_token %}
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="https://www.facebook.com/" class="social"><i class="icofont-facebook"></i></a>
+				<a href="https://www.twitter.com/" class="social"><i class="icofont-twitter"></i></a>
+				<a href="https://www.instagram.com/" class="social"><i class="icofont-instagram"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input type="text" placeholder="Name" name="admin_name" required/>
+			<input type="email" placeholder="Email" name="admin_email" required/>
+			<input type="password" placeholder="Password" name="admin_password" required />
+			<button type="submit">Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="/admin_main_login" method="POST">
+			{% csrf_token %}
+			<h1>Sign in</h1>
+			<div class="social-container">
+				<a href="https://www.facebook.com/" class="social"><i class="icofont-facebook"></i></a>
+				<a href="https://www.twitter.com/" class="social"><i class="icofont-twitter"></i></a>
+				<a href="https://www.instagram.com/" class="social"><i class="icofont-instagram"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input type="email" placeholder="Email" name="admin_email" required />
+			<input type="password" placeholder="Password" name="admin_password" required/>
+			<a href="#">Forgot your password?</a>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Admin!</h1>
+				<p>Enter your personal details</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<p>
+		Created with <i class="fa fa-heart"></i> by
+		<a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+		- Read how I created this and how you can join the challenge
+		<a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
+	</p>
+</footer>
+<script src="{% static 'js/main1.js' %}"></script>
+    </body>
+</html>

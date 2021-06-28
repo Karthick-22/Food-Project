@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}" />
+    <link rel="stylesheet" href="{% static 'js/icofont/icofont.min.css' %}">
+    <title>Register</title>
+    <link rel="icon" href="{% static 'images/title.png' %}" type="image/icon type">
+  </head>
+  <body>
+    <!-- <div class="loader_bg">
+      <div class="loader"><img src="../static/images/login12.gif" alt="#" /></div>
+    </div> -->
+    <div class="container">
+      <div class="forms-container">
+       
+        <div class="signin-signup">
+          
+          <form action="/register_db" class="sign-in-form" method="POST">
+            {% csrf_token %}
+            <h2 class="title" style="padding: 5px;color:red;">Register</h2>
+            <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Firstname" name=first_name required />
+              </div>
+              <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Lastname" name=last_name required />
+              </div>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="email" placeholder="Username or Email" name=user_name required />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" name=password required />
+            </div>
+            <div class="input-field">
+                <i class="icofont-phone"></i>
+                <input type="text" placeholder="Phone No" name=phone_no required />
+              </div>
+            <input type="submit" value="Sign Up" class="btn solid" />
+            
+            <p class="social-text">Or Sign in with social platforms</p>
+            <div class="social-media">
+              <a href="https://www.facebook.com/" target="_blank" class="social-icon">
+                <i class="icofont-facebook"></i>
+              </a>
+              <a href="https://www.twitter.com/" target="_blank" class="social-icon">
+                <i class="icofont-twitter"></i>
+              </a>
+              <a href="https://www.google.com/" target="_blank" class="social-icon">
+                <i class="icofont-google-plus"></i>
+              </a>
+              <a href="https://www.linkedin.com/" target="_blank" class="social-icon">
+                <i class="icofont-linkedin"></i>
+              </a>
+            </div>
+          </form>
+         
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h1 >New <span style="color:black;font-weight: 600;">Here?</span></h>
+              <p>Already haven Account?<span style="color:bisque">Login </span></p>
+              <a href="{% url 'login' %}" > <button class="btn transparent" id="sign-up-btn">
+                Login
+            
+            </button></a>
+
+            
+           <a href="{%  url 'home' %}"> <button class="btn transparent" id="sign-up-btn">
+            Home
+        
+        </button></a>
+         
+          </div>
+            
+        
+          
+          <img src="{% static 'images/register1.svg' %}" class="image" alt="" />
+        </div>
+       
+      </div>
+    </div>
+    <script src="{% static 'js/custom.js' %}"></script>
+ 
+
+   
+</body>
+</html>

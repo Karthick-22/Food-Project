@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Document
+        </title>
+    </head>
+    <body>
+         <form method="POST" enctype="multipart/form-data">
+         {% csrf_token %}
+         {{form.as_p}}
+        
+         <button type="submit">upload</button>
+        </form>
+        {% for i in image.all %}
+        <img src="{{i.image.url}}" style="height:300px;width: 300px;">
+        <p>
+            {{ i.image.name}}
+        </p>
+        {% endfor%} 
+
+       
+    </body>
+</html>
